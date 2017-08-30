@@ -1,0 +1,21 @@
+<h1>Categories#index</h1>
+
+
+<br><br>
+
+<table>
+  <thead>
+    <th>Name</th>
+    <th>Precio</th>
+    <th>Category</th>
+  </thead>
+    <tbody>
+      <% @products.each do |product| %>
+    <tr>
+        <td><%= product.name%></td>
+        <td><%= product.price%></td>
+        <td><%= product.category.name%></td>
+    </tr>   
+      <% end%>
+    </tbody>
+</table>
