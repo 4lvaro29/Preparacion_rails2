@@ -8,13 +8,13 @@
 
 Category.destroy_all
 
-cat1 = Category.create!(name: "Categoría 1")
-cat2 = Category.create!(name: "Categoría 2")
-cat3 = Category.create!(name: "Categoría 3")
+cat1 = Category.create!(name: "Categoría 1", discount:20)
+cat2 = Category.create!(name: "Categoría 2", discount:30)
+cat3 = Category.create!(name: "Categoría 3", discount:40)
 
-Cat1.products.build(name: "Producto 1", price: 1990)
-Cat2.products.build(name: "Producto 2", price: 2990)
-Cat3.products.build(name: "Producto 3", price: 5990)
+Cat1.products.build(name: "Producto 1", price: 1990).save
+Cat2.products.build(name: "Producto 2", price: 2990).save
+Cat3.products.build(name: "Producto 3", price: 5990).save
 
 Product.create!(name: "Producto 4", price: 3500, category_id: cat1.id)
 Product.create!(name: "Producto 5", price: 5500, category_id: cat2.id)
