@@ -12,4 +12,6 @@ class ProductsController < ApplicationController
     @products = Product.all
     end
   end
+end
+end
 end  
