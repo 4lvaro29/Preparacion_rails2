@@ -2,12 +2,15 @@
 
 <br>
 <%= form_tag(products_index_path) do %>
-  <%= label_tag :buscador %>
-  <%= text_field_tag :buscador, nil, placeholder: "Buscar nombre" %>
-  <%= label_tag :filtro_precio, option_for_select(["Todos","0..5000", "5001..10000", "10001..+"],"Todos") %>
-  <%= submit_tag "Buscar" %>
+<%= label_tag :buscador %>
+<%= text_field_tag :buscador, nil, placeholder: "Buscar nombre" %>
+<%= label_tag :filtro_precio %>
+<%= select_tag :filtro_precio, options_for_select(["Todos","0..5000", "5001..10000", "10001..+"],"Todos") %>
+<%= submit_tag "Buscar" %>
 
-<%= end %>
+<% end %>
+
+
 <br><br>
 
 <table>
@@ -16,13 +19,13 @@
     <th>Precio</th>
     <th>Category</th>
   </thead>
-    <tbody>
-      <% @products.each do |product| %>
+  <tbody>
+    <% @products.each do |product| %>
     <tr>
-        <td><%= product.name%></td>
-        <td><%= product.price%></td>
-        <td><%= product.category.name%></td>
+      <td><%= product.name%></td>
+      <td><%= product.price%></td>
+      <td><%= product.category.name%></td>
     </tr>   
-      <% end%>
-    </tbody>
+    <% end%>
+  </tbody>
 </table>
