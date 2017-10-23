@@ -6,15 +6,14 @@
 <table>
   <thead>
     <th>Name</th>
-    <th>Precio</th>
-    <th>Category</th>
+    <th>Discount</th>
   </thead>
     <tbody>
-      <% @products.each do |product| %>
+      <% @categories.each do |category| %>
     <tr>
-        <td><%= product.name%></td>
-        <td><%= product.price%></td>
-        <td><%= product.category.name%></td>
+        <td><%= category.name%></td>
+        <td><%= category.discount%></td>
+        
     </tr>   
       <% end %>
     </tbody>
